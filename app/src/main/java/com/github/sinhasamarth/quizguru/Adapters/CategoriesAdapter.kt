@@ -7,20 +7,16 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.github.sinhasamarth.quizguru.R
+import com.github.sinhasamarth.quizguru.listners.RecyclerViewListener
 import com.github.sinhasamarth.quizguru.model.CategoryModel
 import com.github.sinhasamarth.quizguru.model.TriviaCategory
 
-class CategoriesAdapter(val data: CategoryModel) :
+class CategoriesAdapter(val data: CategoryModel , val listner: RecyclerViewListener ) :
     RecyclerView.Adapter<CategoriesAdapter.CategoryViewHolder>() {
-    init {
-        Log.d("HII", data.toString())
-    }
 
     inner class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val text = itemView.findViewById<TextView>(R.id.categoryName)
-        fun setView(get: TriviaCategory) {
-            text.text = get.name
-        }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
@@ -37,9 +33,8 @@ class CategoriesAdapter(val data: CategoryModel) :
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         holder.text.text = data.trivia_categories[position].name
-        Log.d(
-            "dataname", data.trivia_categories[position].name.toString()
-        )
+        holder.itemView.setOnClickListener { listner.onClickItem(position) }
+
     }
 
     override fun getItemCount() = data.trivia_categories.size

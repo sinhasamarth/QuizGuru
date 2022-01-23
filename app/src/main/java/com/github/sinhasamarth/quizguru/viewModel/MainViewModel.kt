@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.github.sinhasamarth.quizguru.model.CategoryModel
+import com.github.sinhasamarth.quizguru.model.TriviaCategory
 import com.github.sinhasamarth.quizguru.repository.Repository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -13,6 +14,7 @@ import kotlinx.coroutines.withContext
 
 class MainViewModel : ViewModel() {
     val allCategoryList = MutableLiveData<CategoryModel>()
+   var selectedCategory: TriviaCategory? = null
 
     fun getAllCategory() {
         GlobalScope.launch(Dispatchers.IO) {
@@ -21,5 +23,9 @@ class MainViewModel : ViewModel() {
                 allCategoryList.postValue(getData)
             }
         }
+    }
+
+    fun setSelectedCat(position: Int) {
+        selectedCategory = allCategoryList.value?.trivia_categories?.get(position)
     }
 }
