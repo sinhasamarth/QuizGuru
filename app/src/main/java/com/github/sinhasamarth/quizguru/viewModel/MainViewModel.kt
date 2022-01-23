@@ -14,7 +14,8 @@ import kotlinx.coroutines.withContext
 
 class MainViewModel : ViewModel() {
     val allCategoryList = MutableLiveData<CategoryModel>()
-   var selectedCategory: TriviaCategory? = null
+    var selectedCategory: TriviaCategory? = null
+    var selectedLevel = 0
 
     fun getAllCategory() {
         GlobalScope.launch(Dispatchers.IO) {
