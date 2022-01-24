@@ -19,6 +19,9 @@ class MainViewModel : ViewModel() {
     var selectedCategory: TriviaCategory? = null
     var selectedLevel = 0
     val allQuestionList = MutableLiveData<QuestionModel>()
+    var correctAnswerCount = 0
+    var streakof = 0
+    var levelString = "easy"
 
     fun getAllCategory() {
         GlobalScope.launch(Dispatchers.IO) {
@@ -35,16 +38,24 @@ class MainViewModel : ViewModel() {
 
     fun getAllQuestion() {
         GlobalScope.launch {
-          val data  = when (selectedLevel) {
-                0 -> Repository.getQuestion(selectedCategory!!.id, "easy")
-                1 -> Repository.getQuestion(selectedCategory!!.id, "medium")
-                2 -> Repository.getQuestion(selectedCategory!!.id, "hard")
-                else -> null
+            val level: String = when (selectedLevel) {
+                0 -> "easy"
+                1 -> "medium"
+                2 -> "hard"
+                else -> ""
             }
-            withContext(Dispatchers.Main){
+            levelString = level
+            val data = Repository.getQuestion(selectedCategory!!.id, levelString)
+            withContext(Dispatchers.Main) {
                 allQuestionList.value = data
             }
         }
 
+    }
+
+    fun correctAnswer(boolean: Boolean) {
+        if (boolean) {
+            streakof++;correctAnswerCount++
+        } else streakof = 0
     }
 }
