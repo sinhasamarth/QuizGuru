@@ -137,7 +137,7 @@ class QuestionsFragment : Fragment() {
 
         list.remove(randomNo)
 
-        textViewList[randomNo].text = data.correct_answer
+        textViewList[randomNo].text = data.correct_answer.trim()
         var counter = 0
         list.forEach {
             textViewList[it].text = data.incorrect_answers[counter++]
