@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.MutableLiveData
@@ -26,6 +27,8 @@ class QuestionsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentQuestionsBinding.inflate(layoutInflater)
+        binding.parentLayout.visibility = View.INVISIBLE
+        activity?.findViewById<CardView>(R.id.loadingScreen)?.visibility = View.VISIBLE
         return binding.root
     }
 
@@ -34,6 +37,8 @@ class QuestionsFragment : Fragment() {
         sharedViewModel.getAllQuestion()
         sharedViewModel.allQuestionList.observe(viewLifecycleOwner, {
             if (it != null) {
+                binding.parentLayout.visibility = View.VISIBLE
+                activity?.findViewById<CardView>(R.id.loadingScreen)?.visibility = View.INVISIBLE
                 setQuestion(it)
             }
         })
@@ -94,12 +99,12 @@ class QuestionsFragment : Fragment() {
                 setQuestion(questionData, questionNo + 1)
                 resetDrawable()
             } else {
-                findNavController().navigate(R.id.action_questionsFragment_to_resultFragment)
+                findNavController().navigate(R.id.action_questionsFragment_to_resultFragment2)
             }
         }
 
         binding.preBtn.setOnClickListener {
-            setQuestion(questionData, questionNo - 1, true )
+            setQuestion(questionData, questionNo - 1, true)
         }
 
     }

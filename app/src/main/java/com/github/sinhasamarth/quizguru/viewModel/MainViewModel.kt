@@ -58,4 +58,9 @@ class MainViewModel : ViewModel() {
             streakof++;correctAnswerCount++
         } else streakof = 0
     }
+
+    fun resetCounters(){
+        streakof = 0
+        correctAnswerCount= 0
+    }
 }
