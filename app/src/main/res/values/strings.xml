@@ -4,4 +4,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="logo_image">Logo Image</string>
     <string name="sample_text">Sample Text</string>
+    <string name="total_correct_question">Total Correct Question</string>
+    <string name="try_again">Try Again</string>
+    <string name="home">Home</string>
+    <string name="result">Result</string>
+    <string name="Select_lvl">Select Level</string>
+    <string name="_10_10">10/10</string>
+    <string name="_100">100</string>
 </resources>

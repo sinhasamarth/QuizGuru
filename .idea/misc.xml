@@ -4,13 +4,19 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Samarth Sinha/QuizGuru/app/src/main/res/drawable/option_background.xml" value="0.2" />
+        <entry key="..\:/Users/Samarth Sinha/QuizGuru/app/src/main/res/drawable/option_background_light.xml" value="0.11481481481481481" />
+        <entry key="..\:/Users/Samarth Sinha/QuizGuru/app/src/main/res/drawable/result_bg.xml" value="0.1" />
         <entry key="..\:/Users/Samarth Sinha/QuizGuru/app/src/main/res/drawable/round_corner.xml" value="0.2" />
+        <entry key="..\:/Users/Samarth Sinha/QuizGuru/app/src/main/res/layout-v23/result_screen.xml" value="0.16799999999999998" />
         <entry key="..\:/Users/Samarth Sinha/QuizGuru/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Samarth Sinha/QuizGuru/app/src/main/res/layout/catrgories_list_ui_ele.xml" value="0.264" />
         <entry key="..\:/Users/Samarth Sinha/QuizGuru/app/src/main/res/layout/fragment_categories.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Samarth Sinha/QuizGuru/app/src/main/res/layout/fragment_questions.xml" value="0.2" />
+        <entry key="..\:/Users/Samarth Sinha/QuizGuru/app/src/main/res/layout/fragment_result.xml" value="0.16574074074074074" />
         <entry key="..\:/Users/Samarth Sinha/QuizGuru/app/src/main/res/layout/fragment_select_level.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Samarth Sinha/QuizGuru/app/src/main/res/layout/fragment_splash_screen.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Samarth Sinha/QuizGuru/app/src/main/res/layout/result_screen.xml" value="0.264" />
+        <entry key="..\:/Users/Samarth Sinha/QuizGuru/app/src/main/res/layout/test.xml" value="0.23229166666666667" />
       </map>
     </option>
   </component>

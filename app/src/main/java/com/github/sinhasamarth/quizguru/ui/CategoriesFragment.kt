@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.*
@@ -33,6 +34,13 @@ class CategoriesFragment : Fragment(), RecyclerViewListener {
         super.onViewCreated(view, savedInstanceState)
         setRecylerView()
 
+        activity?.onBackPressedDispatcher?.addCallback(
+            viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    activity?.finish()
+                }
+            })
     }
 
 
@@ -52,4 +60,5 @@ class CategoriesFragment : Fragment(), RecyclerViewListener {
         sharedViewModel.setSelectedCat(position)
         findNavController().navigate(R.id.action_categoriesFragment_to_selectLevelFragment)
     }
+
 }

@@ -1,45 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="30sp"
     tools:context=".ui.SelectLevelFragment">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
         android:layout_height="match_parent">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/easyBtn"
-            android:fontFamily="@font/poppins_medium"
-            android:padding="20dp"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        <TextView
+            android:id="@+id/resultText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="EASY"
-            android:backgroundTint="#4CAF50"/>
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/Select_lvl"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+            android:textColor="@color/white" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/medBtn"
-            android:fontFamily="@font/poppins_medium"
-            android:padding="20dp"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        <View
+            app:layout_constraintEnd_toEndOf="@+id/resultText"
+            app:layout_constraintStart_toStartOf="@+id/resultText"
+            app:layout_constraintTop_toBottomOf="@+id/resultText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Meduim"
-            android:backgroundTint="#FF5722"/>
+            android:layout_height="5dp"
+            android:background="@color/teal_200" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/hardBtn"
-            android:fontFamily="@font/poppins_medium"
-            android:padding="20dp"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hard"
-            android:backgroundTint="#E91E1E"/>
-    </LinearLayout>
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/resultText">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/easyBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#4CAF50"
+                android:fontFamily="@font/poppins_medium"
+                android:padding="20dp"
+                android:text="EASY"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/medBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FF5722"
+                android:fontFamily="@font/poppins_medium"
+                android:padding="20dp"
+                android:text="Meduim"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/hardBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#E91E1E"
+                android:fontFamily="@font/poppins_medium"
+                android:padding="20dp"
+                android:text="Hard"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </FrameLayout>

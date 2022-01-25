@@ -49,5 +49,20 @@
         <action
             android:id="@+id/action_resultFragment_to_splashScreen2"
             app:destination="@id/splashScreen" />
+        <action
+            android:id="@+id/action_resultFragment_to_questionsFragment"
+            app:destination="@id/questionsFragment" />
+        <action
+            android:id="@+id/action_resultFragment_to_splashScreen"
+            app:destination="@id/splashScreen" />
+        <action
+            android:id="@+id/action_resultFragment_to_questionsFragment2"
+            app:destination="@id/questionsFragment" />
+        <action
+            android:id="@+id/action_resultFragment_to_categoriesFragment"
+            app:destination="@id/categoriesFragment" />
+        <action
+            android:id="@+id/action_resultFragment_to_selectLevelFragment"
+            app:destination="@id/selectLevelFragment" />
     </fragment>
 </navigation>
