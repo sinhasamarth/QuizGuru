@@ -38,6 +38,7 @@ android {
 dependencies {
 
     def lottieVersion = "4.2.1"
+    def koin_version = "3.1.5"
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
@@ -62,5 +63,16 @@ dependencies {
     // Lottie
     implementation "com.airbnb.android:lottie:$lottieVersion"
 
+    // Koin
+//    implementation "org.koin:koin-android:2.0.1"
+//    implementation 'org.koin:koin-androidx-viewmodel:2.0.1'
+//    implementation 'org.koin:koin-androidx-scope:2.0.1'
+
+    // Koin Core features
+    implementation "io.insert-koin:koin-core:$koin_version"
+// Koin Test features
+    testImplementation "io.insert-koin:koin-test:$koin_version"
+    // Koin main features for Android
+    implementation "io.insert-koin:koin-android:$koin_version"
 
 }

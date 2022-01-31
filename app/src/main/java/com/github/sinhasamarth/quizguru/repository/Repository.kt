@@ -3,12 +3,12 @@ package com.github.sinhasamarth.quizguru.repository
 import com.github.sinhasamarth.quizguru.api.RetrofitInstance
 import com.github.sinhasamarth.quizguru.model.CategoryModel
 
-object Repository {
+class Repository(val retrofit: RetrofitInstance) {
 
     suspend fun getAllCategory(): CategoryModel {
-        return RetrofitInstance.myApi.getAllCategory()
+        return retrofit.myApi.getAllCategory()
     }
 
     suspend fun getQuestion(catId: Int, level: String) =
-        RetrofitInstance.myApi.getAllQuestion(catId = catId, level = level)
+        retrofit.myApi.getAllQuestion(catId = catId, level = level)
 }

@@ -13,11 +13,12 @@ import androidx.navigation.fragment.findNavController
 import com.github.sinhasamarth.quizguru.R
 import com.github.sinhasamarth.quizguru.databinding.FragmentResultBinding
 import com.github.sinhasamarth.quizguru.viewModel.MainViewModel
+import org.koin.android.ext.android.get
 
 class ResultFragment() : Fragment() {
 
     private lateinit var binding: FragmentResultBinding
-    private val sharedViewModel: MainViewModel by activityViewModels()
+    private val sharedViewModel = get<MainViewModel>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

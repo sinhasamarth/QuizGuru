@@ -10,12 +10,12 @@ import androidx.navigation.fragment.findNavController
 import com.github.sinhasamarth.quizguru.R
 import com.github.sinhasamarth.quizguru.databinding.FragmentSelectLevelBinding
 import com.github.sinhasamarth.quizguru.viewModel.MainViewModel
+import org.koin.android.ext.android.get
 
 class SelectLevelFragment : Fragment() {
 
     private lateinit var binding: FragmentSelectLevelBinding
-    private val sharedViewModel: MainViewModel by activityViewModels()
-
+    private val sharedViewModel = get<MainViewModel>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

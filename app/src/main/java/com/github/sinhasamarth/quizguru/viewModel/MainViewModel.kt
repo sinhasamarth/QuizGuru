@@ -14,7 +14,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class MainViewModel : ViewModel() {
+class MainViewModel(val repo: Repository) : ViewModel() {
     val allCategoryList = MutableLiveData<CategoryModel>()
     var selectedCategory: TriviaCategory? = null
     var selectedLevel = 0
@@ -25,7 +25,7 @@ class MainViewModel : ViewModel() {
 
     fun getAllCategory() {
         GlobalScope.launch(Dispatchers.IO) {
-            val getData = Repository.getAllCategory()
+            val getData = repo.getAllCategory()
             withContext(Dispatchers.Main) {
                 allCategoryList.postValue(getData)
             }
@@ -45,7 +45,7 @@ class MainViewModel : ViewModel() {
                 else -> ""
             }
             levelString = level
-            val data = Repository.getQuestion(selectedCategory!!.id, levelString)
+            val data = repo.getQuestion(selectedCategory!!.id, levelString)
             withContext(Dispatchers.Main) {
                 allQuestionList.value = data
             }
@@ -59,8 +59,8 @@ class MainViewModel : ViewModel() {
         } else streakof = 0
     }
 
-    fun resetCounters(){
+    fun resetCounters() {
         streakof = 0
-        correctAnswerCount= 0
+        correctAnswerCount = 0
     }
 }

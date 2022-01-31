@@ -17,10 +17,11 @@ import com.github.sinhasamarth.quizguru.R
 import com.github.sinhasamarth.quizguru.databinding.FragmentCategoriesBinding
 import com.github.sinhasamarth.quizguru.listners.RecyclerViewListener
 import com.github.sinhasamarth.quizguru.viewModel.MainViewModel
+import org.koin.android.ext.android.get
 
 class CategoriesFragment : Fragment(), RecyclerViewListener {
     private lateinit var binding: FragmentCategoriesBinding
-    private val sharedViewModel: MainViewModel by activityViewModels()
+    private val sharedViewModel = get<MainViewModel>()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

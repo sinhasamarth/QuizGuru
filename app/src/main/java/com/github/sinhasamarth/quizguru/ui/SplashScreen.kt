@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.github.sinhasamarth.quizguru.R
 import com.github.sinhasamarth.quizguru.utils.Utils
 import com.github.sinhasamarth.quizguru.viewModel.MainViewModel
+import org.koin.android.ext.android.get
 
 class SplashScreen : Fragment() {
 
@@ -24,12 +25,12 @@ class SplashScreen : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val sharedViewModel: MainViewModel by activityViewModels()
-        sharedViewModel.allCategoryList.observe(viewLifecycleOwner, {
+        val sharedViewModel = get<MainViewModel>()
+        sharedViewModel.allCategoryList.observe(viewLifecycleOwner) {
             if (it != null) {
                 findNavController().navigate(R.id.action_splashScreen_to_categoriesFragment)
             }
-        })
+        }
         sharedViewModel.getAllCategory()
     }
 }

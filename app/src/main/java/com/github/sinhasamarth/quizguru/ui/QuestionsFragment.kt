@@ -17,10 +17,11 @@ import com.github.sinhasamarth.quizguru.databinding.FragmentQuestionsBinding
 import com.github.sinhasamarth.quizguru.model.QuestionModel
 import com.github.sinhasamarth.quizguru.model.Result
 import com.github.sinhasamarth.quizguru.viewModel.MainViewModel
+import org.koin.android.ext.android.get
 
 class QuestionsFragment : Fragment() {
 
-    private val sharedViewModel: MainViewModel by activityViewModels()
+    private val sharedViewModel = get<MainViewModel>()
     private lateinit var binding: FragmentQuestionsBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
